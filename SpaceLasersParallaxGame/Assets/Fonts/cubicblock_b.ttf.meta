@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3da24a7a9f8e74ba7b7e73a0d3d10b17
+timeCreated: 1510519143
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DemonCubicBlockFont Black
+  fontNames:
+  - DemonCubicBlockFont Black
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 42be3956aff6549ce9a47b763da6e326
+timeCreated: 1510519140
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DemonCubicBlockFont Shade
+  fontNames:
+  - DemonCubicBlockFont Shade
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

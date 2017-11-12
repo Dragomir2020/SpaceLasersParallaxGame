@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 2975ee44535c24174affeddd4a0d43bb
+timeCreated: 1510519137
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DemonCubicBlockFont Tile
+  fontNames:
+  - DemonCubicBlockFont Tile
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
