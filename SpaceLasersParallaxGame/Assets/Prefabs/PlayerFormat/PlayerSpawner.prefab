@@ -116,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4104092235979086}
   - component: {fileID: 212226616596631666}
+  - component: {fileID: 50620024855338666}
   m_Layer: 0
   m_Name: laserBlue16
   m_TagString: Untagged
@@ -549,6 +550,26 @@ Transform:
   m_Father: {fileID: 4391197827500568}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50620024855338666
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471469999559506}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!212 &212139617632846946
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float playerSpeed = 15f;
 	public float padding = 1f;
+	public float projectileSpeed = 5f;
 	public GameObject PlayerSpawner;
 
 	private float xmin;
@@ -26,6 +27,12 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.Space)){
+			GameObject Laser = Instantiate(lasers[1].gameObject, this.transform.GetChild(playerGOIndex).position, Quaternion.identity) as GameObject;
+			Laser.transform.parent = this.transform;
+			Laser.SetActive (true);
+			Laser.rigidbody2D.velocity = new Vector2 (0f, projectileSpeed);
+		}
 		Vector3 previousPos = this.transform.GetChild (playerGOIndex).position;
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			//Move Player ship right
