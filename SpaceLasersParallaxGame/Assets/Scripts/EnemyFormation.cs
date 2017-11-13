@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class EnemyFormation : MonoBehaviour {
 
+	private float xmin;
+	private float xmax;
+	private bool isMovingRight = true;
+
 	public GameObject Enemies;
+	public float padding = 0.1f;
+	public float speed = 0.01f;
+	private float width;
+	public float height = 5f;
 
 	//Create game object with enemies from prefab on awake
 	void Awake(){
@@ -15,5 +23,37 @@ public class EnemyFormation : MonoBehaviour {
 		} else {
 			Debug.LogError ("Add EnemySpawner prefab to EnemyFormation GameObject in inspector");
 		}
+	}
+
+	void Start(){
+		ScreenSize ();
+	}
+
+	void Update(){
+		if (isMovingRight) {
+			transform.position += Vector3.right * speed * Time.deltaTime;
+		} else {
+			transform.position -= Vector3.right * speed * Time.deltaTime;
+		}
+		if(transform.position.x - 0.5f * width < xmin){
+			isMovingRight = true;
+		} else if(transform.position.x + 0.5f * width > xmax){
+			isMovingRight = false;
+		}
+	}
+		
+	//Allows EnemyFormation space to be visible in editor
+	public void OnDrawGizmos(){
+		Gizmos.DrawWireCube (transform.position, new Vector3(width, height, -5f));
+	}
+
+	private void ScreenSize(){
+		//Locate bounds
+		float distance = transform.position.z - Camera.main.transform.position.z;
+		Vector3 leftMostPos = Camera.main.ViewportToWorldPoint (new Vector3(0f, 0f, distance));
+		Vector3 rightMostPos = Camera.main.ViewportToWorldPoint (new Vector3(1f, 0f, distance));
+		width = (rightMostPos.x - leftMostPos.x) * 0.5f;
+		xmin = leftMostPos.x + padding;
+		xmax = rightMostPos.x - padding;
 	}
 }
