@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 212226616596631666}
   - component: {fileID: 50620024855338666}
   - component: {fileID: 61746438040775584}
+  - component: {fileID: 114514368589835728}
   m_Layer: 0
   m_Name: laserBlue16
   m_TagString: Untagged
@@ -136,6 +137,7 @@ GameObject:
   - component: {fileID: 212189785147299300}
   - component: {fileID: 50759235653748990}
   - component: {fileID: 61920327936144524}
+  - component: {fileID: 114731288525367584}
   m_Layer: 0
   m_Name: laserGreen10
   m_TagString: Untagged
@@ -297,6 +299,7 @@ GameObject:
   - component: {fileID: 212650737069613164}
   - component: {fileID: 50510168950574322}
   - component: {fileID: 61610591595289272}
+  - component: {fileID: 114280764922325044}
   m_Layer: 0
   m_Name: laserRed16
   m_TagString: Untagged
@@ -690,6 +693,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.54}
   m_EdgeRadius: 0
+--- !u!114 &114280764922325044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1998681484570492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5b60bc901b94ddb9a1cbbda8ec4d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+--- !u!114 &114514368589835728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471469999559506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5b60bc901b94ddb9a1cbbda8ec4d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+--- !u!114 &114731288525367584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487116656635514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5b60bc901b94ddb9a1cbbda8ec4d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!212 &212139617632846946
 SpriteRenderer:
   m_ObjectHideFlags: 1

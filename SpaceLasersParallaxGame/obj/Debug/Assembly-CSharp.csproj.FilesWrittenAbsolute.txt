@@ -17,3 +17,7 @@
 /Users/dillondragomir/Desktop/UnityRepos/SpaceLasersParallaxGame/SpaceLasersParallaxGame/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/dillondragomir/Desktop/UnityRepos/SpaceLasersParallaxGame/SpaceLasersParallaxGame/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/dillondragomir/Desktop/UnityRepos/SpaceLasersParallaxGame/SpaceLasersParallaxGame/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/dillondragomir/Desktop/UnityRepos/SpaceLasersParallaxGame/SpaceLasersParallaxGame/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/dillondragomir/Desktop/UnityRepos/SpaceLasersParallaxGame/SpaceLasersParallaxGame/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/dillondragomir/Desktop/UnityRepos/SpaceLasersParallaxGame/SpaceLasersParallaxGame/obj/Debug/Assembly-CSharp.dll
+/Users/dillondragomir/Desktop/UnityRepos/SpaceLasersParallaxGame/SpaceLasersParallaxGame/obj/Debug/Assembly-CSharp.dll.mdb
