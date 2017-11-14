@@ -14,7 +14,9 @@ public class EnemyFormation : MonoBehaviour {
 	private float width;
 	public float height = 5f;
 
-	//Create game object with enemies from prefab on awake
+	/// <summary>
+	///  Create game object with enemies from prefab on awake
+	/// </summary>
 	void Awake(){
 		if (Enemies != null) {
 			GameObject go = Instantiate (Enemies, this.transform.position, this.transform.rotation);
@@ -42,11 +44,15 @@ public class EnemyFormation : MonoBehaviour {
 		}
 	}
 		
-	//Allows EnemyFormation space to be visible in editor
+	/// <summary>
+	///  Allows EnemyFormation space to be visible in editor
+	/// </summary>
 	public void OnDrawGizmos(){
 		Gizmos.DrawWireCube (transform.position, new Vector3(width, height, -5f));
 	}
-
+	/// <summary>
+	///  Set parameters for screen size 
+	/// </summary>
 	private void ScreenSize(){
 		//Locate bounds
 		float distance = transform.position.z - Camera.main.transform.position.z;

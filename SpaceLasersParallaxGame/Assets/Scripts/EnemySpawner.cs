@@ -46,10 +46,13 @@ public class EnemySpawner : MonoBehaviour {
 			enemy.SetActive (true);
 		}
 
-			
+		//I added this comment via vi		
 		//CreateBlackShip1Example ();
 	}
 
+	/// <summary>
+	///  Example of accessing parsed ship sprite and creating gameobject with it
+	/// </summary>
 	private void CreateBlackShip1Example(){
 		//Create example enemy
 		GameObject blackShip = Instantiate (Enemies [0] [0].gameObject, this.transform.position, this.transform.rotation);
@@ -59,6 +62,9 @@ public class EnemySpawner : MonoBehaviour {
 		blackShip.SetActive (true);
 	}
 
+	/// <summary>
+	///  Set parameters relative to screen size
+	/// </summary>
 	private void ScreenSize(){
 		//Locate bounds
 		float distance = transform.position.z - Camera.main.transform.position.z;
