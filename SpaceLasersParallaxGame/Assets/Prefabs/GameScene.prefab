@@ -35,7 +35,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4338741181700356}
-  - component: {fileID: 114304211709169096}
   - component: {fileID: 114207819907062866}
   m_Layer: 0
   m_Name: Player
@@ -310,23 +309,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603e63cb9f85047ff88691f50ed48303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114304211709169096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1253234829341658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666bf8f23ef474931a05b9e4a250eefb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   playerSpeed: 15
   padding: 1
-  projectileSpeed: 15
-  PlayerSpawner: {fileID: 1721422321396052, guid: d846c577367f24ca7ba858517e4c5d52,
+  projectileSpeed: 20
+  playerSpawner: {fileID: 1721422321396052, guid: d846c577367f24ca7ba858517e4c5d52,
     type: 2}
   fireingRate: 0.2
+  playerHealth: 150
 --- !u!114 &114416464419441470
 MonoBehaviour:
   m_ObjectHideFlags: 1

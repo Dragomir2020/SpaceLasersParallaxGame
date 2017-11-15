@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 ///  Class keeps track of enemy health and controlls its individual behaviour
 /// </summary>
-public class EnemyBehaviour : MonoBehaviour {
+public class EnemyController : MonoBehaviour {
 
 	public float health = 150f;
 	public float laserSpeed = 10f;

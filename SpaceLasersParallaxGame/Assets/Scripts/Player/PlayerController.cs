@@ -11,23 +11,20 @@ public class PlayerController : MonoBehaviour {
 	public float playerSpeed = 15f;
 	public float padding = 1f;
 	public float projectileSpeed = 20f;
-	public GameObject PlayerSpawner;
 	public float fireingRate = 0.2f;
+	public float playerHealth = 150f;
 
 
 	private float xmin;
 	private float xmax;
 	private int playerGOIndex = 0;
 	private int laserGOIndex = 1;
-	//IMPORTANT: ships[0] is ships GO and then individual sprites are preceding
-	private SpriteRenderer[] ships;
 	//IMPORTANT: lasers[0] is lasers GO and then individual sprites are preceding
-	private SpriteRenderer[] lasers;
+	private SpriteRenderer laser;
 
 	void Start () {
-		ParsePrefab ();
-		CreatePlayerShip (1);
 		ScreenSize();
+		GetLaserGO ();
 	}
 		
 	void Update () {
@@ -37,21 +34,26 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			CancelInvoke ("FireLaser");
 		}
-		Vector3 previousPos = this.transform.GetChild (playerGOIndex).position;
+		Vector3 previousPos = this.transform.position;
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			//Move Player ship right
-			this.transform.GetChild (playerGOIndex).position = new Vector3 (Mathf.Clamp (previousPos.x - (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
+			this.transform.position = new Vector3 (Mathf.Clamp (previousPos.x - (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
 			//Move player ship left
-			this.transform.GetChild (playerGOIndex).position = new Vector3 (Mathf.Clamp (previousPos.x + (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
+			this.transform.position = new Vector3 (Mathf.Clamp (previousPos.x + (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
 		}
 	}
 
 	private void FireLaser(){
-		GameObject Laser = Instantiate (lasers [1].gameObject, this.transform.GetChild (playerGOIndex).position, Quaternion.identity) as GameObject;
-		Laser.transform.parent = this.transform;
-		Laser.SetActive (true);
-		Laser.GetComponent<Rigidbody2D>().velocity = new Vector3 (0f, projectileSpeed, 0f);
+		if (laser != null) {
+			Vector3 shipPosition = this.transform.position + new Vector3 (0f, 1f, 0f);
+			GameObject Laser = Instantiate (laser.gameObject, shipPosition, Quaternion.identity) as GameObject;
+			Laser.transform.parent = this.transform;
+			Laser.SetActive (true);
+			Laser.GetComponent<Rigidbody2D> ().velocity = new Vector3 (0f, projectileSpeed, 0f);
+		} else {
+			Debug.LogWarning ("laser gameobject is null");
+		}
 	}
 		
 	/// <summary>
@@ -59,38 +61,34 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	private void ScreenSize(){
 		//Ship GO
-		GameObject GM = this.transform.GetChild(playerGOIndex).gameObject;
+		GameObject GM = this.transform.gameObject;
 		float distance = GM.transform.position.z - Camera.main.transform.position.z;
 		Vector3 leftMostPos = Camera.main.ViewportToWorldPoint (new Vector3(0f, 0f,distance));
 		Vector3 rightMostPos = Camera.main.ViewportToWorldPoint (new Vector3(1f, 0f,distance));
 		xmin = leftMostPos.x + padding;
 		xmax = rightMostPos.x - padding;
 	}
-		
+
 	/// <summary>
-	///  Parse player objects out of prefab
+	///  Get laser gameobject for shooting
 	/// </summary>
-	private void ParsePrefab(){
-		if (PlayerSpawner != null) {
-			//GetPlayerElements
-			GameObject shipsGO = PlayerSpawner.transform.GetChild (playerGOIndex).gameObject;
-			GameObject lasersGO = PlayerSpawner.transform.GetChild (laserGOIndex).gameObject;
-			ships = shipsGO.GetComponentsInChildren<SpriteRenderer> (true);
-			lasers = lasersGO.GetComponentsInChildren<SpriteRenderer> (true);
-		} else {
-			Debug.LogWarning ("Attach Player Spawner prefab to PlayerController");
+	private void GetLaserGO(){
+		laser = this.transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<SpriteRenderer> ();
+	}
+
+	/// <summary>
+	///  Triggered when player collider is triggered with laser or ship
+	/// </summary>
+	void OnTriggerEnter2D(Collider2D collider){
+		Projectile laser = collider.gameObject.GetComponent<Projectile> ();
+		if (laser != null) {
+			playerHealth -= laser.GetDamage ();
+			laser.Hit ();
+			if (playerHealth <= 0){
+				Destroy (gameObject);
+			}
 		}
 	}
 		
-	/// <summary>
-	///  Create initial player ship
-	/// </summary>
-	private void CreatePlayerShip(int index){
-		GameObject PlayerShip = Instantiate (ships[index].gameObject, new Vector3(0f, -4f, -5f), this.transform.rotation);
-		PlayerShip.transform.parent = this.transform;
-		PlayerShip.SetActive (true);
-	}
-
-
 
 }

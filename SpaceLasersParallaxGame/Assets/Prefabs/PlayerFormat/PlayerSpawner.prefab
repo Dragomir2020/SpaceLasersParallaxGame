@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 212139617632846946}
   - component: {fileID: 60337945105152294}
   - component: {fileID: 50709547360976520}
-  - component: {fileID: 114060683959731862}
+  - component: {fileID: 114404293179060074}
   m_Layer: 0
   m_Name: playerShip1_blue
   m_TagString: Untagged
@@ -758,18 +758,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.54}
   m_EdgeRadius: 0
---- !u!114 &114060683959731862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1752032581722966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0315306c60ec493bacc45e9e57f5908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: 150
 --- !u!114 &114280764922325044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -782,6 +770,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+--- !u!114 &114404293179060074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752032581722966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666bf8f23ef474931a05b9e4a250eefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 15
+  padding: 1
+  projectileSpeed: 20
+  fireingRate: 0.2
 --- !u!114 &114514368589835728
 MonoBehaviour:
   m_ObjectHideFlags: 1

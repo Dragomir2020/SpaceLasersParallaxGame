@@ -1379,6 +1379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  laserSpeed: 10
+  fireingRate: 3
 --- !u!114 &114066282310977910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1391,6 +1393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  laserSpeed: 10
+  fireingRate: 3
 --- !u!114 &114238003192625082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1414,6 +1418,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  laserSpeed: 10
+  fireingRate: 3
 --- !u!114 &114759965797270046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1438,6 +1444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  laserSpeed: 10
+  fireingRate: 3
 --- !u!114 &114945481637256244
 MonoBehaviour:
   m_ObjectHideFlags: 1
