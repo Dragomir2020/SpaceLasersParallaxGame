@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject PlayerSpawner;
 	public float fireingRate = 0.2f;
 
+
 	private float xmin;
 	private float xmax;
 	private int playerGOIndex = 0;
@@ -70,11 +71,15 @@ public class PlayerController : MonoBehaviour {
 	///  Parse player objects out of prefab
 	/// </summary>
 	private void ParsePrefab(){
-		//GetPlayerElements
-		GameObject shipsGO = PlayerSpawner.transform.GetChild(playerGOIndex).gameObject;
-		GameObject lasersGO = PlayerSpawner.transform.GetChild(laserGOIndex).gameObject;
-		ships = shipsGO.GetComponentsInChildren<SpriteRenderer> (true);
-		lasers = lasersGO.GetComponentsInChildren<SpriteRenderer> (true);
+		if (PlayerSpawner != null) {
+			//GetPlayerElements
+			GameObject shipsGO = PlayerSpawner.transform.GetChild (playerGOIndex).gameObject;
+			GameObject lasersGO = PlayerSpawner.transform.GetChild (laserGOIndex).gameObject;
+			ships = shipsGO.GetComponentsInChildren<SpriteRenderer> (true);
+			lasers = lasersGO.GetComponentsInChildren<SpriteRenderer> (true);
+		} else {
+			Debug.LogWarning ("Attach Player Spawner prefab to PlayerController");
+		}
 	}
 		
 	/// <summary>
@@ -85,5 +90,7 @@ public class PlayerController : MonoBehaviour {
 		PlayerShip.transform.parent = this.transform;
 		PlayerShip.SetActive (true);
 	}
+
+
 
 }

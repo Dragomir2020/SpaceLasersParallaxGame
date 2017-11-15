@@ -1,12 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemySpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/EnemyBehaviour.cs">
     <Files>
-      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="11" Column="17" />
-      <File FileName="Assets/Scripts/EnemyFormation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManager.cs" Line="8" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="14" Column="51" />
-      <File FileName="Assets/Position.cs" Line="8" Column="36" />
+      <File FileName="Assets/Scripts/EnemyFormation.cs" Line="54" Column="37" />
+      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="39" Column="64" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="16" Column="16" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="34" Column="4" />
+      <File FileName="Assets/Scripts/Shredder.cs" Line="7" Column="2" />
+      <File FileName="Assets/Scripts/Projectile.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/EnemyBehaviour.cs" Line="11" Column="30" />
+      <File FileName="Assets/Scripts/Enemy/EnemySpawner.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/EnemyFormation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/Position.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

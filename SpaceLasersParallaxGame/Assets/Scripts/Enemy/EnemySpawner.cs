@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  Class creates enemy formations and parses gameobjects out of prefab
+/// </summary>
 public class EnemySpawner : MonoBehaviour {
 
 	private List<SpriteRenderer[]> Enemies = new List<SpriteRenderer[]>();

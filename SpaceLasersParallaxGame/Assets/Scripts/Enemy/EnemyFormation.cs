@@ -31,6 +31,9 @@ public class EnemyFormation : MonoBehaviour {
 		ScreenSize ();
 	}
 
+	/// <summary>
+	///  Moves formation left and right within screen bounds
+	/// </summary>
 	void Update(){
 		if (isMovingRight) {
 			transform.position += Vector3.right * speed * Time.deltaTime;

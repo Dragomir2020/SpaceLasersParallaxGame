@@ -233,6 +233,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4586558057271336}
   - component: {fileID: 212139617632846946}
+  - component: {fileID: 60337945105152294}
+  - component: {fileID: 50709547360976520}
+  - component: {fileID: 114060683959731862}
   m_Layer: 0
   m_Name: playerShip1_blue
   m_TagString: Untagged
@@ -598,6 +601,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50709547360976520
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752032581722966}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50759235653748990
 Rigidbody2D:
   serializedVersion: 4
@@ -618,6 +641,48 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &60337945105152294
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752032581722966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.99, y: 0.75}
+    newSize: {x: 0.99, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4927503, y: 0.066509664}
+      - {x: 0.3627356, y: -0.018729672}
+      - {x: 0.11375181, y: 0.122518435}
+      - {x: 0.08100884, y: 0.37275037}
+      - {x: -0.08925261, y: 0.375}
+      - {x: -0.12250368, y: 0.12949926}
+      - {x: -0.3662333, y: -0.018236324}
+      - {x: -0.49275035, y: 0.06800446}
+      - {x: -0.4680044, y: -0.24275036}
+      - {x: -0.41150218, y: -0.21751106}
+      - {x: -0.15399851, y: -0.27475336}
+      - {x: -0.15087506, y: -0.2730019}
+      - {x: -0.07475332, y: -0.38399854}
+      - {x: 0.082503684, y: -0.37275037}
+      - {x: 0.13351998, y: -0.27600142}
+      - {x: 0.39425996, y: -0.21775776}
+      - {x: 0.4545066, y: -0.24825114}
+      - {x: 0.46125546, y: -0.24825111}
 --- !u!61 &61610591595289272
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -693,6 +758,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.54}
   m_EdgeRadius: 0
+--- !u!114 &114060683959731862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752032581722966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0315306c60ec493bacc45e9e57f5908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 150
 --- !u!114 &114280764922325044
 MonoBehaviour:
   m_ObjectHideFlags: 1
