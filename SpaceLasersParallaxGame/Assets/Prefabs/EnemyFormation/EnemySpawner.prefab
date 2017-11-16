@@ -925,8 +925,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1381,6 +1381,7 @@ MonoBehaviour:
   health: 150
   laserSpeed: 10
   fireingRate: 3
+  shotsPerSecond: 0.5
 --- !u!114 &114066282310977910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1395,6 +1396,7 @@ MonoBehaviour:
   health: 150
   laserSpeed: 10
   fireingRate: 3
+  shotsPerSecond: 0.5
 --- !u!114 &114238003192625082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1420,6 +1422,7 @@ MonoBehaviour:
   health: 150
   laserSpeed: 10
   fireingRate: 3
+  shotsPerSecond: 0.5
 --- !u!114 &114759965797270046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1446,6 +1449,7 @@ MonoBehaviour:
   health: 150
   laserSpeed: 10
   fireingRate: 3
+  shotsPerSecond: 0.5
 --- !u!114 &114945481637256244
 MonoBehaviour:
   m_ObjectHideFlags: 1

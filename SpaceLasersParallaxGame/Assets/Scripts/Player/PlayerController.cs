@@ -22,13 +22,20 @@ public class PlayerController : MonoBehaviour {
 	//IMPORTANT: lasers[0] is lasers GO and then individual sprites are preceding
 	private SpriteRenderer laser;
 
+	/// <summary>
+	///  Initializes screen variables and gets laser game object
+	/// </summary>
 	void Start () {
 		ScreenSize();
 		GetLaserGO ();
 	}
-		
+
+	/// <summary>
+	///  Calls given functions every frame
+	/// </summary>
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Space)){
+			// Invokes FireLaser function at given interval
 			InvokeRepeating ("FireLaser", 0.000001f, fireingRate);
 		}
 		if (Input.GetKeyUp (KeyCode.Space)) {
@@ -44,11 +51,14 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	///  Fire laser from player at enemy
+	/// </summary>
 	private void FireLaser(){
 		if (laser != null) {
 			Vector3 shipPosition = this.transform.position + new Vector3 (0f, 1f, 0f);
 			GameObject Laser = Instantiate (laser.gameObject, shipPosition, Quaternion.identity) as GameObject;
-			Laser.transform.parent = this.transform;
+			//Laser.transform.parent = this.transform;
 			Laser.SetActive (true);
 			Laser.GetComponent<Rigidbody2D> ().velocity = new Vector3 (0f, projectileSpeed, 0f);
 		} else {
