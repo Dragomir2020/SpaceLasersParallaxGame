@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4445406518209060}
   - component: {fileID: 212857326772253822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip1_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4744563940843318}
   - component: {fileID: 212242261057944078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip3_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4189801978300140}
   - component: {fileID: 212186387230760152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip1_orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4039385636541410}
   - component: {fileID: 212785143497964540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip2_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4291572018448886}
   - component: {fileID: 212861793605109772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip2_orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 50620024855338666}
   - component: {fileID: 61746438040775584}
   - component: {fileID: 114514368589835728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: laserBlue16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 50759235653748990}
   - component: {fileID: 61920327936144524}
   - component: {fileID: 114731288525367584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: laserGreen10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4736245928671954}
   - component: {fileID: 212980316534263684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip3_orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4585977531743074}
   - component: {fileID: 212526678521425248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip3_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4015284049085504}
   - component: {fileID: 212188672603402352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip2_green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 60337945105152294}
   - component: {fileID: 50709547360976520}
   - component: {fileID: 114404293179060074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip1_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4403303791539148}
   - component: {fileID: 212454495417322070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip1_green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4910640075964246}
   - component: {fileID: 212201508032530396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip3_green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4957256753736920}
   - component: {fileID: 212858848998786038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: playerShip2_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 50510168950574322}
   - component: {fileID: 61610591595289272}
   - component: {fileID: 114280764922325044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: laserRed16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,6 +785,7 @@ MonoBehaviour:
   padding: 1
   projectileSpeed: 20
   fireingRate: 0.2
+  playerHealth: 150
 --- !u!114 &114514368589835728
 MonoBehaviour:
   m_ObjectHideFlags: 1

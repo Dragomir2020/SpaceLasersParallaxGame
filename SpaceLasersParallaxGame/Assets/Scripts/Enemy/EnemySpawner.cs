@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour {
 	private float width;
 	private float xmin;
 	private float xmax;
+	private int numberOfEnemies = 0;
 
 	public float padding = 0f;
 
@@ -19,16 +20,15 @@ public class EnemySpawner : MonoBehaviour {
 	void Start () {
 		//Get screen parameteres
 		ScreenSize ();
+		ParseEnemyPrefabs ();
+		InitializeEnemyPositions ();
+		CreateEnemiesAtPositions ();
+	}
 
-		//Get different enemy ships from prefab object
-		GameObject[] Colors = GameObject.FindGameObjectsWithTag("Enemies");
-		//enemyPosition = GameObject.FindGameObjectWithTag ("EnemyPosition");
-		enemyPosition = this.GetComponentInChildren<Position>(true).gameObject;
-		foreach (GameObject color in Colors) {
-			//Must set true to get inactive components
-			Enemies.Add(color.GetComponentsInChildren<SpriteRenderer>(true));
-		}
-
+	/// <summary>
+	///  Creates enemy positions inside of gizmo
+	/// </summary>
+	private void InitializeEnemyPositions(){
 		//Create Initial Enemy Positions
 		for(float i = -0.5f * width; i < 0.5f * width; i += 2){
 			for(float j = 2.5f; j > -2; j -= 2){
@@ -37,20 +37,35 @@ public class EnemySpawner : MonoBehaviour {
 				enemyPos.SetActive (true);
 			}
 		}
+	}
 
+	/// <summary>
+	///  Parses enemy ships out of game object prefab
+	/// </summary>
+	private void ParseEnemyPrefabs(){
+		//Get different enemy ships from prefab object
+		GameObject[] Colors = GameObject.FindGameObjectsWithTag("Enemies");
+		//enemyPosition = GameObject.FindGameObjectWithTag ("EnemyPosition");
+		enemyPosition = this.GetComponentInChildren<Position>(true).gameObject;
+		foreach (GameObject color in Colors) {
+			//Must set true to get inactive components
+			Enemies.Add(color.GetComponentsInChildren<SpriteRenderer>(true));
+		}
+	}
+
+	/// <summary>
+	///  Creates enemy game object at each position created
+	/// </summary>
+	private void CreateEnemiesAtPositions(){
 		//Find enemy positions
 		Position[] enemiesPositions = this.transform.parent.GetComponentsInChildren<Position>();
-	
 		//Create enemy at enemiesPositions
-		//foreach(Transform child in transform){
 		foreach(Position pos in enemiesPositions){
 			//This is basic black enemy and could be changed
 			GameObject enemy = Instantiate (Enemies [1] [0].gameObject, pos.gameObject.transform);
 			enemy.SetActive (true);
+			numberOfEnemies++;
 		}
-
-		//I added this comment via vi		
-		//CreateBlackShip1Example ();
 	}
 
 	/// <summary>
@@ -76,5 +91,26 @@ public class EnemySpawner : MonoBehaviour {
 		width = (rightMostPos.x - leftMostPos.x) * 0.5f;
 		xmin = leftMostPos.x + padding;
 		xmax = rightMostPos.x - padding;
+	}
+
+	/// <summary>
+	///  Returns true if all enemies are gone
+	/// </summary>
+	public bool AllEnemiesAreDead(){
+		if (numberOfEnemies == 0) {
+			return true;
+		}
+		return false;
+	}
+
+	/// <summary>
+	///  Requires alternate script to delete enemy each time gameobject is destroyed
+	/// </summary>
+	public void EnemyKilled(){
+		numberOfEnemies--;
+		Debug.LogWarning ("You killed them all");
+		if (numberOfEnemies == 0) {
+			Debug.LogWarning ("You killed them all");
+		}
 	}
 }

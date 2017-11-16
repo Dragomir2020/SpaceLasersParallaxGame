@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 50563470643425388}
   - component: {fileID: 61870949109338422}
   - component: {fileID: 114057350925397082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyGreen1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 212760711441065632}
   - component: {fileID: 50056014029482586}
   - component: {fileID: 61210209210278376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyBlack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 212778422703319956}
   - component: {fileID: 50929644983507484}
   - component: {fileID: 61806069834954480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyBlue3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 50626021296115880}
   - component: {fileID: 61919586940936004}
   - component: {fileID: 114860262442558590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyBlue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 50838781495790732}
   - component: {fileID: 61070457076691542}
   - component: {fileID: 114066282310977910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyBlack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 50293093014470088}
   - component: {fileID: 61121879064011240}
   - component: {fileID: 114251001079064612}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyRed1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 212190150043147676}
   - component: {fileID: 50560378894396204}
   - component: {fileID: 61103333196358816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyBlue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4124723765550538}
   - component: {fileID: 212310212363221466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyBlue4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4057444807199720}
   - component: {fileID: 212099605161078638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyRed2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4776247564746726}
   - component: {fileID: 212066421780571210}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyGreen2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 50249078298321470}
   - component: {fileID: 61737363008999672}
   - component: {fileID: 114759965797270046}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: laserRed16
   m_TagString: Untagged
   m_Icon: {fileID: 0}

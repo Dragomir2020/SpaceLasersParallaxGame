@@ -13,11 +13,16 @@ public class EnemyController : MonoBehaviour {
 
 	private GameObject redLaser;
 
+	/// <summary>
+	///  Called when Enemy is spawned
+	/// </summary>
 	void Start(){
-		//TODO: This could be improved with GetComponentsInChildren<Projectile>();
-		redLaser = this.transform.parent.parent.GetChild (0).GetChild (5).GetChild (0).gameObject;
+		ParseLaserGameObject ();
 	}
-		
+
+	/// <summary>
+	///  Fires enemies laser based off of calculated probability
+	/// </summary>
 	void Update(){
 		float probability = shotsPerSecond * Time.deltaTime;
 		//Random.value returns value between 0 and 1
@@ -47,9 +52,20 @@ public class EnemyController : MonoBehaviour {
 			health -= laser.GetDamage ();
 			laser.Hit ();
 			if (health <= 0){
+				//Decrease enemy count by 1 on EnemySpawner
+				gameObject.transform.parent.parent.GetChild(0).GetComponent<EnemySpawner>().EnemyKilled();
+				//Destroy enemy game object
 				Destroy (gameObject);
 			}
 		}
+	}
+		
+	/// <summary>
+	///  Parses out laser game object to be shot at player
+	/// </summary>
+	private void ParseLaserGameObject(){
+		//TODO: This could be improved with GetComponentsInChildren<Projectile>();
+		redLaser = this.transform.parent.parent.GetChild (0).GetChild (5).GetChild (0).gameObject;
 	}
 
 }

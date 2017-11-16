@@ -45,6 +45,7 @@ public class EnemyFormation : MonoBehaviour {
 		} else if(transform.position.x + 0.5f * width > xmax){
 			isMovingRight = false;
 		}
+
 	}
 		
 	/// <summary>
@@ -65,4 +66,5 @@ public class EnemyFormation : MonoBehaviour {
 		xmin = leftMostPos.x + padding;
 		xmax = rightMostPos.x - padding;
 	}
+
 }
