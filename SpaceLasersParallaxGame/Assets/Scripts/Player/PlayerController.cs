@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
 	public float fireingRate = 0.2f;
 	public float playerHealth = 150f;
 
-
 	private float xmin;
 	private float xmax;
 	private int playerGOIndex = 0;
@@ -34,6 +33,14 @@ public class PlayerController : MonoBehaviour {
 	///  Calls given functions every frame
 	/// </summary>
 	void Update () {
+		InvokeFireSpaceKeyPressed ();
+		MovePlayerLeftOrRight ();
+	}
+
+	/// <summary>
+	///  Invokes FireLaser function when the space key is pressed
+	/// </summary>
+	private void InvokeFireSpaceKeyPressed(){
 		if(Input.GetKeyDown(KeyCode.Space)){
 			// Invokes FireLaser function at given interval
 			InvokeRepeating ("FireLaser", 0.000001f, fireingRate);
@@ -41,6 +48,12 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			CancelInvoke ("FireLaser");
 		}
+	}
+
+	/// <summary>
+	///  Moves the player left and right between bounds when left and right keys are pressed
+	/// </summary>
+	private void MovePlayerLeftOrRight(){
 		Vector3 previousPos = this.transform.position;
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			//Move Player ship right
@@ -99,6 +112,5 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 	}
-		
 
 }

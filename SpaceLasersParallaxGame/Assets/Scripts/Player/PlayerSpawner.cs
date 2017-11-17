@@ -11,7 +11,6 @@ public class PlayerSpawner : MonoBehaviour {
 	public float fireingRate = 0.2f;
 	public float playerHealth = 150f;
 
-
 	private float xmin;
 	private float xmax;
 	private int playerGOIndex = 0;

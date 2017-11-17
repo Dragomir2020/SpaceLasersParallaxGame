@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour {
 	private int numberOfEnemies = 0;
 
 	public float padding = 0f;
+	public float spawnDelay = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,7 @@ public class EnemySpawner : MonoBehaviour {
 	private void InitializeEnemyPositions(){
 		//Create Initial Enemy Positions
 		for(float i = -0.5f * width; i < 0.5f * width; i += 2){
-			for(float j = 2.5f; j > -2; j -= 2){
+			for(float j = 2.5f; j > 0; j -= 2){
 				GameObject enemyPos = Instantiate (enemyPosition, new Vector3(i, j, -5f), this.transform.rotation);
 				enemyPos.transform.parent = this.transform.parent;
 				enemyPos.SetActive (true);
@@ -69,6 +70,19 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	/// <summary>
+	///  Spawn enemies with delay until all positions are occupied
+	/// </summary>
+	void SpawnUntilFull(){
+		Transform freePosition = NextFreePosition();
+		if(freePosition != null){
+			GameObject enemy = Instantiate (Enemies [1] [0].gameObject, freePosition);
+			enemy.SetActive (true);
+			numberOfEnemies++;
+			Invoke ("SpawnUntilFull", spawnDelay);
+		}
+	}
+
+	/// <summary>
 	///  Example of accessing parsed ship sprite and creating gameobject with it
 	/// </summary>
 	private void CreateBlackShip1Example(){
@@ -97,7 +111,7 @@ public class EnemySpawner : MonoBehaviour {
 	///  Returns true if all enemies are gone
 	/// </summary>
 	public bool AllEnemiesAreDead(){
-		if (numberOfEnemies == 0) {
+		if (numberOfEnemies > 0) {
 			return true;
 		}
 		return false;
@@ -108,9 +122,22 @@ public class EnemySpawner : MonoBehaviour {
 	/// </summary>
 	public void EnemyKilled(){
 		numberOfEnemies--;
-		Debug.LogWarning ("You killed them all");
-		if (numberOfEnemies == 0) {
+		if (AllEnemiesAreDead()) {
 			Debug.LogWarning ("You killed them all");
+			SpawnUntilFull ();
 		}
+	}
+
+	/// <summary>
+	///  Returns transform of next free position in enemy formation
+	/// </summary>
+	private Transform NextFreePosition(){
+		Position[] pos = transform.parent.GetComponentsInChildren<Position> ();
+		foreach(Position childPosition in pos){
+			if (childPosition.gameObject.transform.childCount == 0) {
+				return childPosition.gameObject.transform;
+			}
+		}
+		return null;
 	}
 }

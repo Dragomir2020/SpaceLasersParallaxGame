@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  Class used mainly for enemy formation movement and acts as a parent game object
+/// </summary>
 public class EnemyFormation : MonoBehaviour {
 
 	private float xmin;

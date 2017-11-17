@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 50626021296115880}
   - component: {fileID: 61919586940936004}
   - component: {fileID: 114860262442558590}
+  - component: {fileID: 95778716457400722}
   m_Layer: 9
   m_Name: enemyBlue1
   m_TagString: Untagged
@@ -271,6 +272,7 @@ GameObject:
   - component: {fileID: 50838781495790732}
   - component: {fileID: 61070457076691542}
   - component: {fileID: 114066282310977910}
+  - component: {fileID: 95104643312150676}
   m_Layer: 9
   m_Name: enemyBlack1
   m_TagString: Untagged
@@ -1367,6 +1369,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.775, y: 0.7}
   m_EdgeRadius: 0
+--- !u!95 &95104643312150676
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596202916228136}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0233649c83ab446b7a5bf9d89481d052, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95778716457400722
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1529373442613952}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f768ba8682e0349c791a20060830fd0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114057350925397082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1393,7 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4002e189f97ab4aaca2c46bb3d4fa8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  health: 80
   laserSpeed: 10
   fireingRate: 3
   shotsPerSecond: 0.5
@@ -1462,6 +1498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   padding: 0.5
+  spawnDelay: 0.5
 --- !u!212 &212066421780571210
 SpriteRenderer:
   m_ObjectHideFlags: 1
