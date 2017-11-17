@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 /// <summary>
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public float projectileSpeed = 20f;
 	public float fireingRate = 0.2f;
 	public float playerHealth = 150f;
+	public AudioClip fireSound;
 
 	private float xmin;
 	private float xmax;
@@ -74,6 +76,7 @@ public class PlayerController : MonoBehaviour {
 			//Laser.transform.parent = this.transform;
 			Laser.SetActive (true);
 			Laser.GetComponent<Rigidbody2D> ().velocity = new Vector3 (0f, projectileSpeed, 0f);
+			AudioSource.PlayClipAtPoint (fireSound, transform.position);
 		} else {
 			Debug.LogWarning ("laser gameobject is null");
 		}
@@ -108,6 +111,7 @@ public class PlayerController : MonoBehaviour {
 			playerHealth -= laser.GetDamage ();
 			laser.Hit ();
 			if (playerHealth <= 0){
+				SceneManager.LoadScene ("Lose Screen");
 				Destroy (gameObject);
 			}
 		}

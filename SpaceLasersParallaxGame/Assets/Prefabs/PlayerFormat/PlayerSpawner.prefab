@@ -699,7 +699,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.13, y: 0.54}
+    oldSize: {x: 0.074285716, y: 0.30857143}
     newSize: {x: 0.13, y: 0.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -786,6 +786,7 @@ MonoBehaviour:
   projectileSpeed: 20
   fireingRate: 0.2
   playerHealth: 150
+  fireSound: {fileID: 8300000, guid: e3fa1d47fadc64035ac3a99bad5f8db5, type: 3}
 --- !u!114 &114514368589835728
 MonoBehaviour:
   m_ObjectHideFlags: 1

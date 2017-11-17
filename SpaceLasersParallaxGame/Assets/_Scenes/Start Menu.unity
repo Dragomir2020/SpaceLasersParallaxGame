@@ -137,7 +137,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 822728646}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -216,11 +216,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 994788971f97d4466a2be6ef690dd3cd, type: 3}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 6ac3f474af9d64d14988c7ff6e3c83c0, type: 3}
+    m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: quit
 --- !u!222 &63489125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 720264912}
   - component: {fileID: 720264911}
   - component: {fileID: 720264913}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 822728646}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 994788971f97d4466a2be6ef690dd3cd, type: 3}
+    m_Font: {fileID: 12800000, guid: 6ac3f474af9d64d14988c7ff6e3c83c0, type: 3}
     m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: start
 --- !u!222 &720264912
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -508,8 +508,8 @@ RectTransform:
   m_Children:
   - {fileID: 869067660}
   - {fileID: 1654444586}
-  - {fileID: 63489122}
   - {fileID: 720264910}
+  - {fileID: 63489122}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -591,8 +591,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 42be3956aff6549ce9a47b763da6e326, type: 3}
-    m_FontSize: 100
+    m_Font: {fileID: 12800000, guid: 6efba490bd00f4f29a9c9e20b47ffb26, type: 3}
+    m_FontSize: 75
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -625,8 +625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.75, y: 134.9}
-  m_SizeDelta: {x: 798.5, y: 130.8}
+  m_AnchoredPosition: {x: 0, y: 133.5}
+  m_SizeDelta: {x: 674, y: 133.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &929709343
 GameObject:
@@ -778,12 +778,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 42be3956aff6549ce9a47b763da6e326, type: 3}
-    m_FontSize: 55
+    m_Font: {fileID: 12800000, guid: 6efba490bd00f4f29a9c9e20b47ffb26, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 55
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1

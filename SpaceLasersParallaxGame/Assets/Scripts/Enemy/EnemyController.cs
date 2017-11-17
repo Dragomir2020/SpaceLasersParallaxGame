@@ -9,7 +9,10 @@ public class EnemyController : MonoBehaviour {
 	public float health = 80f;
 	public float laserSpeed = 10f;
 	public float shotsPerSecond = 0.5f;
+	public AudioClip fireSound;
 
+	private float TotalHealth;
+	private ScoreKeeper ScoreKeeperGO;
 	private GameObject redLaser;
 
 	/// <summary>
@@ -17,6 +20,8 @@ public class EnemyController : MonoBehaviour {
 	/// </summary>
 	void Start(){
 		ParseLaserGameObject ();
+		TotalHealth = health;
+		ScoreKeeperGO = GameObject.Find ("Score").GetComponent<ScoreKeeper> ();
 	}
 
 	/// <summary>
@@ -34,12 +39,13 @@ public class EnemyController : MonoBehaviour {
 	///  Fires enemies laser
 	/// </summary>
 	private void FireLaser(){
-		Vector3 startPosition = transform.position + new Vector3 (0f, -1f, 0f);
+		Vector3 startPosition = transform.position + new Vector3 (0f, 0f, 0f);
 		GameObject redLaserInstance = Instantiate (redLaser, startPosition, Quaternion.identity) as GameObject;
 		//This causes transform to chage with parent
 		//redLaserInstance.transform.parent = this.transform;
 		redLaserInstance.SetActive (true);
 		redLaserInstance.GetComponent<Rigidbody2D> ().velocity = new Vector3 (0f, -laserSpeed, 0f);
+		AudioSource.PlayClipAtPoint (fireSound, transform.position);
 	}
 
 	/// <summary>
@@ -53,6 +59,8 @@ public class EnemyController : MonoBehaviour {
 			if (health <= 0){
 				//Decrease enemy count by 1 on EnemySpawner
 				gameObject.transform.parent.parent.GetChild(0).GetComponent<EnemySpawner>().EnemyKilled();
+				//IncreaseScore
+				ScoreKeeperGO.AddToScore((int)TotalHealth);
 				//Destroy enemy game object
 				Destroy (gameObject);
 			}
