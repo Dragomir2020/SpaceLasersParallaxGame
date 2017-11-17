@@ -55,7 +55,8 @@ public class EnemyFormation : MonoBehaviour {
 	///  Allows EnemyFormation space to be visible in editor
 	/// </summary>
 	public void OnDrawGizmos(){
-		Gizmos.DrawWireCube (transform.position, new Vector3(width, height, -5f));
+		Vector3 newPos = transform.position + new Vector3 (0f, 0.5f * height, 0f);
+		Gizmos.DrawWireCube (newPos, new Vector3(width, height, -5f));
 	}
 	/// <summary>
 	///  Set parameters for screen size 
@@ -65,6 +66,7 @@ public class EnemyFormation : MonoBehaviour {
 		float distance = transform.position.z - Camera.main.transform.position.z;
 		Vector3 leftMostPos = Camera.main.ViewportToWorldPoint (new Vector3(0f, 0f, distance));
 		Vector3 rightMostPos = Camera.main.ViewportToWorldPoint (new Vector3(1f, 0f, distance));
+		Vector3 topMostPos = Camera.main.ViewportToWorldPoint (new Vector3(0f, 1f, distance));
 		width = (rightMostPos.x - leftMostPos.x) * 0.5f;
 		xmin = leftMostPos.x + padding;
 		xmax = rightMostPos.x - padding;

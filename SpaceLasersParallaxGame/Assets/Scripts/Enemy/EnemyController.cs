@@ -8,7 +8,6 @@ public class EnemyController : MonoBehaviour {
 
 	public float health = 80f;
 	public float laserSpeed = 10f;
-	public float fireingRate = 3f;
 	public float shotsPerSecond = 0.5f;
 
 	private GameObject redLaser;

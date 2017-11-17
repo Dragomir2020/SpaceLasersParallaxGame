@@ -31,8 +31,8 @@ public class EnemySpawner : MonoBehaviour {
 	/// </summary>
 	private void InitializeEnemyPositions(){
 		//Create Initial Enemy Positions
-		for(float i = -0.5f * width; i < 0.5f * width; i += 2){
-			for(float j = 2.5f; j > 0; j -= 2){
+		for(float i = -0.5f * width; i < 0.5f * width; i += 1){
+			for(float j = 5f; j > 0; j -= 1){
 				GameObject enemyPos = Instantiate (enemyPosition, new Vector3(i, j, -5f), this.transform.rotation);
 				enemyPos.transform.parent = this.transform.parent;
 				enemyPos.SetActive (true);

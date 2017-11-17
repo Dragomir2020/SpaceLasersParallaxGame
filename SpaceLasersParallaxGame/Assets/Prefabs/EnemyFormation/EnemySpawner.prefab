@@ -1360,7 +1360,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.775, y: 0.7}
+    oldSize: {x: 0.5314286, y: 0.48}
     newSize: {x: 0.93, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1416,7 +1416,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   laserSpeed: 10
-  fireingRate: 3
   shotsPerSecond: 0.5
 --- !u!114 &114066282310977910
 MonoBehaviour:
@@ -1431,7 +1430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 80
   laserSpeed: 10
-  fireingRate: 3
   shotsPerSecond: 0.5
 --- !u!114 &114238003192625082
 MonoBehaviour:
@@ -1457,7 +1455,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   laserSpeed: 10
-  fireingRate: 3
   shotsPerSecond: 0.5
 --- !u!114 &114759965797270046
 MonoBehaviour:
@@ -1484,8 +1481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   laserSpeed: 10
-  fireingRate: 3
-  shotsPerSecond: 0.5
+  shotsPerSecond: 0.1
 --- !u!114 &114945481637256244
 MonoBehaviour:
   m_ObjectHideFlags: 1
