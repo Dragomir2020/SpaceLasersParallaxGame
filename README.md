@@ -14,3 +14,15 @@ Laser shooting scrolling game created in Unity. Possible AI creation for play te
 
 ## Score Keeping
 - Lives, score and damage is all tracked and changable to make game play more fun
+
+## Sounds
+- Music player persists through game and plays music for game
+- Lasers from enemy and player have shooting sound
+
+## TODO
+- Add more UI for live number
+- Add explosions when ships are destroyed
+- Add animation for enemy ships to divebomb player and eventually go back to enemy formation if not killed
+- Possibly more sounds for differnt actions
+- More types of enemies with different animations
+- Let player choose ship at begining of gameplay
