@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 224483632693678842}
   - component: {fileID: 222193698717823796}
   - component: {fileID: 114474018423101322}
+  - component: {fileID: 114892575502646578}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -248,6 +249,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4498979968734674}
+  - component: {fileID: 114466169327991970}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -587,6 +589,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a57100ec1bde4f959f13a330556e22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114466169327991970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996329452002426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b0c70d2abbf468983718b388f1752b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114474018423101322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -684,6 +697,17 @@ MonoBehaviour:
   padding: 1
   speed: 2
   height: 5
+--- !u!114 &114892575502646578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346253253706060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802752b20a8904173a73cffc49b45e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198096214748642164
 ParticleSystem:
   m_ObjectHideFlags: 1

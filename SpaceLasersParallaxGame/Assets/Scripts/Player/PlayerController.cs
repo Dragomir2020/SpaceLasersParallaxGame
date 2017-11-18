@@ -121,10 +121,8 @@ public class PlayerController : MonoBehaviour {
 		GameObject score = GameObject.Find ("Score");
 		int scoreNum = score.GetComponent<ScoreKeeper> ().GetScore ();
 		//Save score to music player
-		Debug.LogWarning ("Die " + scoreNum.ToString());
 		GameObject musicP = GameObject.Find ("MusicPlayer");
 		if(musicP != null){
-			Debug.LogWarning ("Score: " + scoreNum.ToString());
 			MusicPlayer mus = musicP.GetComponent<MusicPlayer> ();
 			mus.PlayerScore = scoreNum;
 		}

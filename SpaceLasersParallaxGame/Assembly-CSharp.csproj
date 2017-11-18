@@ -51,12 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Leader.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyFormation.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Enemy\Position.cs" />
-     <Compile Include="Assets\Scripts\Leaderboard.cs" />
+     <Compile Include="Assets\Scripts\LeaderBoard.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\MusicPlayer.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
@@ -64,6 +63,7 @@
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
      <Compile Include="Assets\Scripts\Shredder.cs" />
+     <Compile Include="Assets\Scripts\UIController.cs" />
      <None Include="Assets\SpaceShooterRedux\license.txt" />
      <None Include="Assets\SpaceShooterRedux\Spritesheet\sheet.xml" />
  <Reference Include="UnityEngine.Analytics">

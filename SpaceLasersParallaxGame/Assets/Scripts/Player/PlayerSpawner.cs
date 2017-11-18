@@ -17,9 +17,12 @@ public class PlayerSpawner : MonoBehaviour {
 	//IMPORTANT: ships[0] is ships GO and then individual sprites are preceding
 	private SpriteRenderer[] ships;
 
-	void Start () {
+	void Awake(){
 		ParsePrefab ();
 		CreatePlayerSpawnerGO ();
+	}
+
+	void Start () {
 		CreatePlayerShip (1);
 		ScreenSize();
 	}

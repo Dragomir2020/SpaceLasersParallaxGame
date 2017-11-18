@@ -17,11 +17,14 @@ public class EnemySpawner : MonoBehaviour {
 	public float padding = 0f;
 	public float spawnDelay = 0.5f;
 
-	// Use this for initialization
-	void Start () {
+	void Awake(){
 		//Get screen parameteres
 		ScreenSize ();
 		ParseEnemyPrefabs ();
+	}
+
+	// Use this for initialization
+	void Start () {
 		InitializeEnemyPositions ();
 		CreateEnemiesAtPositions ();
 	}
@@ -122,7 +125,6 @@ public class EnemySpawner : MonoBehaviour {
 	/// </summary>
 	public void EnemyKilled(){
 		numberOfEnemies--;
-		Debug.LogWarning ("Number of enemies: " + numberOfEnemies.ToString());
 		if (AllEnemiesAreDead()) {
 			SpawnUntilFull ();
 		}
