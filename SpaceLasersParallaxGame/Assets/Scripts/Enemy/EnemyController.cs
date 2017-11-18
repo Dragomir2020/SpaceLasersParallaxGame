@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
 	public float laserSpeed = 10f;
 	public float shotsPerSecond = 0.5f;
 	public AudioClip fireSound;
+	public AudioClip deathSound;
 
 	private float TotalHealth;
 	private ScoreKeeper ScoreKeeperGO;
@@ -39,8 +40,7 @@ public class EnemyController : MonoBehaviour {
 	///  Fires enemies laser
 	/// </summary>
 	private void FireLaser(){
-		Vector3 startPosition = transform.position + new Vector3 (0f, 0f, 0f);
-		GameObject redLaserInstance = Instantiate (redLaser, startPosition, Quaternion.identity) as GameObject;
+		GameObject redLaserInstance = Instantiate (redLaser, transform.position, Quaternion.identity) as GameObject;
 		//This causes transform to chage with parent
 		//redLaserInstance.transform.parent = this.transform;
 		redLaserInstance.SetActive (true);
@@ -57,12 +57,7 @@ public class EnemyController : MonoBehaviour {
 			health -= laser.GetDamage ();
 			laser.Hit ();
 			if (health <= 0){
-				//Decrease enemy count by 1 on EnemySpawner
-				gameObject.transform.parent.parent.GetChild(0).GetComponent<EnemySpawner>().EnemyKilled();
-				//IncreaseScore
-				ScoreKeeperGO.AddToScore((int)TotalHealth);
-				//Destroy enemy game object
-				Destroy (gameObject);
+				Die ();
 			}
 		}
 	}
@@ -73,6 +68,19 @@ public class EnemyController : MonoBehaviour {
 	private void ParseLaserGameObject(){
 		//TODO: This could be improved with GetComponentsInChildren<Projectile>();
 		redLaser = this.transform.parent.parent.GetChild (0).GetChild (5).GetChild (0).gameObject;
+	}
+
+	/// <summary>
+	///  Kills enemy
+	/// </summary>
+	private void Die(){
+		//Decrease enemy count by 1 on EnemySpawner
+		gameObject.transform.parent.parent.GetChild(0).GetComponent<EnemySpawner>().EnemyKilled();
+		//IncreaseScore
+		ScoreKeeperGO.AddToScore((int)TotalHealth);
+		AudioSource.PlayClipAtPoint (deathSound, transform.position);
+		//Destroy enemy game object
+		Destroy (gameObject);
 	}
 
 }

@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 	private int laserGOIndex = 1;
 	//IMPORTANT: lasers[0] is lasers GO and then individual sprites are preceding
 	private SpriteRenderer laser;
+	private int playerLives;
 
 	/// <summary>
 	///  Initializes screen variables and gets laser game object
@@ -71,8 +72,7 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	private void FireLaser(){
 		if (laser != null) {
-			Vector3 shipPosition = this.transform.position + new Vector3 (0f, 1f, 0f);
-			GameObject Laser = Instantiate (laser.gameObject, shipPosition, Quaternion.identity) as GameObject;
+			GameObject Laser = Instantiate (laser.gameObject, transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity) as GameObject;
 			//Laser.transform.parent = this.transform;
 			Laser.SetActive (true);
 			Laser.GetComponent<Rigidbody2D> ().velocity = new Vector3 (0f, projectileSpeed, 0f);
@@ -111,10 +111,25 @@ public class PlayerController : MonoBehaviour {
 			playerHealth -= laser.GetDamage ();
 			laser.Hit ();
 			if (playerHealth <= 0){
-				SceneManager.LoadScene ("Lose Screen");
-				Destroy (gameObject);
+				Die ();
 			}
 		}
+	}
+
+	private void Die(){
+		//Get Score game object
+		GameObject score = GameObject.Find ("Score");
+		int scoreNum = score.GetComponent<ScoreKeeper> ().GetScore ();
+		//Save score to music player
+		Debug.LogWarning ("Die " + scoreNum.ToString());
+		GameObject musicP = GameObject.Find ("MusicPlayer");
+		if(musicP != null){
+			Debug.LogWarning ("Score: " + scoreNum.ToString());
+			MusicPlayer mus = musicP.GetComponent<MusicPlayer> ();
+			mus.PlayerScore = scoreNum;
+		}
+		SceneManager.LoadScene ("Lose Screen");
+		Destroy (gameObject);
 	}
 
 }

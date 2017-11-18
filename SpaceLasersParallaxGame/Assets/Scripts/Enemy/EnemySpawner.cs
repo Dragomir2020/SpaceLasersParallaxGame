@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour {
 	private void InitializeEnemyPositions(){
 		//Create Initial Enemy Positions
 		for(float i = -0.5f * width; i < 0.5f * width; i += 1){
-			for(float j = 5f; j > 0; j -= 1){
+			for(float j = 4f; j > 0; j -= 1){
 				GameObject enemyPos = Instantiate (enemyPosition, new Vector3(i, j, -5f), this.transform.rotation);
 				enemyPos.transform.parent = this.transform.parent;
 				enemyPos.SetActive (true);
@@ -111,7 +111,7 @@ public class EnemySpawner : MonoBehaviour {
 	///  Returns true if all enemies are gone
 	/// </summary>
 	public bool AllEnemiesAreDead(){
-		if (numberOfEnemies > 0) {
+		if (numberOfEnemies <= 10) {
 			return true;
 		}
 		return false;
@@ -122,8 +122,8 @@ public class EnemySpawner : MonoBehaviour {
 	/// </summary>
 	public void EnemyKilled(){
 		numberOfEnemies--;
+		Debug.LogWarning ("Number of enemies: " + numberOfEnemies.ToString());
 		if (AllEnemiesAreDead()) {
-			Debug.LogWarning ("You killed them all");
 			SpawnUntilFull ();
 		}
 	}

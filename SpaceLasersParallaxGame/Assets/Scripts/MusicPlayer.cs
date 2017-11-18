@@ -12,6 +12,21 @@ public class MusicPlayer : MonoBehaviour {
 			instance = this;
 			GameObject.DontDestroyOnLoad(gameObject);
 		}
-		
 	}
+
+	//USE THIS TO PERSIST DATA BETWEEN CLASSES
+	private string myName;
+
+	public string PlayerName{
+		get { return myName; }
+		set { this.myName = value; }
+	}
+
+	private int myScore;
+
+	public int PlayerScore{
+		get { return myScore; }
+		set { this.myScore = value; }
+	}
+
 }

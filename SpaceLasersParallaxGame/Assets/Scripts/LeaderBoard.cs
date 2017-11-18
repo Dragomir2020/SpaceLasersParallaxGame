@@ -10,6 +10,7 @@ using System.IO;
 /// </summary>
 public class Leaderboard : MonoBehaviour {
 
+	public Text tex;
 	private string filePath;
 	//My score is passed in
 	private int myScore;
@@ -20,7 +21,21 @@ public class Leaderboard : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		filePath = "/playerData.dat";
-		LoadData ();
+		LoadPlayerScore ();
+		//LoadData ();
+		if (myScore != null) {
+			tex.text = myScore.ToString ();
+		} else {
+			tex.text = "0";
+		}
+	}
+
+	void Update(){
+		//Execute on Enter
+		if (Input.GetKey (KeyCode.KeypadEnter)) {
+			myScore = 3100;
+			myName = this.GetComponent<Text> ().text;
+		}
 	}
 
 	/// <summary>
@@ -30,12 +45,31 @@ public class Leaderboard : MonoBehaviour {
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Open (Application.persistentDataPath + filePath, FileMode.Open);
 
-		//Loop through and add score to leaderboard players if they beat anyone
-		LeaderboardData leader = new LeaderboardData ();
-		//leader.PlayerScore = myScore;
-		//leader.PlayerName = myName;
+		int count = 0;
 
-		bf.Serialize (file, leader);
+		//Loop through and add score to leaderboard players if they beat anyone
+		foreach(LeaderboardData.LeaderBoardPlayer n in allLeaders.LeaderboardArray){
+			
+			if (n.PlayerScore < myScore) {
+				
+				//Loop through moving down players
+				for (int i = count; i < 9; i++) {
+					allLeaders.LeaderboardArray [i + 1].PlayerScore = n.PlayerScore;
+					allLeaders.LeaderboardArray [i + 1].PlayerName = n.PlayerName;
+				}
+
+				//Set new score after moving down losers
+				allLeaders.LeaderboardArray[count].PlayerScore = n.PlayerScore;
+				allLeaders.LeaderboardArray [count].PlayerName = n.PlayerName;
+
+				break;
+			}
+
+			count++;
+		}
+
+		//Save data in binary to file
+		bf.Serialize (file, allLeaders);
 		file.Close ();
 	}
 
@@ -49,20 +83,23 @@ public class Leaderboard : MonoBehaviour {
 			FileStream file = File.Open (Application.persistentDataPath + filePath, FileMode.Open);
 			allLeaders = (LeaderboardData)bf.Deserialize (file);
 			file.Close ();
-		} else {
-			//Setup empty leaderboards
-
-			//bf.Serialize (file, leader);
-
 		}
-
 	}
+
+	/// <summary>
+	///  Loads player score from persisted data in music player
+	/// </summary>
+	private void LoadPlayerScore(){
+		MusicPlayer mus = GameObject.Find ("MusicPlayer").GetComponent<MusicPlayer> ();
+		myScore = mus.PlayerScore;
+	}
+
 
 	/// <summary>
 	///  Class holds data for the leaderboards to be converted to binary and saved
 	/// </summary>
 	[Serializable]
-	private class LeaderboardData
+	public class LeaderboardData
 	{
 		private LeaderBoardPlayer [] leaders = new LeaderBoardPlayer[10];
 
