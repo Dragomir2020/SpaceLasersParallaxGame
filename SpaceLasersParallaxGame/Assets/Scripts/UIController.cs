@@ -39,7 +39,7 @@ public class UIController : MonoBehaviour {
 	///  Create UI for number of lives
 	/// </summary>
 	private void CreateLifeUI(){
-		GameObject lifeGO = Instantiate (life, this.transform.position + new Vector3 (0f, 0f, -6f), Quaternion.identity) as GameObject;
+		GameObject lifeGO = Instantiate (life, life.transform.position, Quaternion.identity) as GameObject;
 		lifeGO.SetActive (true);
 		lifeGO.transform.SetParent (this.transform);
 	}
