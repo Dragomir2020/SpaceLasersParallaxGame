@@ -61,10 +61,10 @@ public class PlayerController : MonoBehaviour {
 		Vector3 previousPos = this.transform.position;
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			//Move Player ship right
-			this.transform.position = new Vector3 (Mathf.Clamp (previousPos.x - (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
+			this.transform.parent.position = new Vector3 (Mathf.Clamp (previousPos.x - (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
 			//Move player ship left
-			this.transform.position = new Vector3 (Mathf.Clamp (previousPos.x + (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
+			this.transform.parent.position = new Vector3 (Mathf.Clamp (previousPos.x + (playerSpeed * Time.deltaTime), xmin, xmax), -4f, -5f);
 		}
 	}
 
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour {
 	///  Get laser gameobject for shooting
 	/// </summary>
 	private void GetLaserGO(){
-		laser = this.transform.parent.GetChild(0).GetChild(1).GetChild(0).GetComponent<SpriteRenderer> ();
+		laser = this.transform.parent.parent.GetChild(1).GetChild(1).GetChild(0).GetComponent<SpriteRenderer> ();
 	}
 
 	/// <summary>
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour {
 			playerHealth -= laser.GetDamage ();
 			laser.Hit ();
 			if (playerHealth <= 0){
-				UIController cont = this.transform.parent.parent.GetChild (0).GetComponent<UIController> ();
+				UIController cont = this.transform.parent.parent.parent.GetChild (0).GetComponent<UIController> ();
 				cont.DeleteLife ();
 				if (cont.NumberOfLives == 0) {
 					Die ();

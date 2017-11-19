@@ -57,8 +57,8 @@ public class PlayerSpawner : MonoBehaviour {
 	///  Create initial player ship
 	/// </summary>
 	private void CreatePlayerShip(int index){
-		GameObject PlayerShip = Instantiate (ships[index].gameObject, new Vector3(0f, -4f, -5f), this.transform.rotation);
-		PlayerShip.transform.parent = this.transform;
+		Position pos = this.GetComponentInChildren<Position>();
+		GameObject PlayerShip = Instantiate (ships [index].gameObject, pos.gameObject.transform);
 		PlayerShip.SetActive (true);
 	}
 
