@@ -21,7 +21,6 @@ Laser shooting scrolling game created in Unity. Possible AI creation for play te
 
 ## TODO
 - Add animation for enemy ships to divebomb player and eventually go back to enemy formation if not killed
-- Add animation for player ship being spawned
 - Possibly more sounds for differnt actions
 - More types of enemies with different animations
 - Let player choose ship at begining of gameplay
