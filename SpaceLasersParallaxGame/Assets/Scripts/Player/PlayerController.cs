@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 	private int laserGOIndex = 1;
 	//IMPORTANT: lasers[0] is lasers GO and then individual sprites are preceding
 	private SpriteRenderer laser;
-	private int playerLives;
+	private float maxPlayerHealth;
 
 	/// <summary>
 	///  Initializes screen variables and gets laser game object
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		ScreenSize();
 		GetLaserGO ();
+		maxPlayerHealth = playerHealth;
 	}
 
 	/// <summary>
@@ -111,7 +112,14 @@ public class PlayerController : MonoBehaviour {
 			playerHealth -= laser.GetDamage ();
 			laser.Hit ();
 			if (playerHealth <= 0){
-				Die ();
+				UIController cont = this.transform.parent.parent.GetChild (0).GetComponent<UIController> ();
+				cont.DeleteLife ();
+				if (cont.NumberOfLives == 0) {
+					Die ();
+				} else {
+					//Set game object invisible for some time or delete and recreate
+					playerHealth = maxPlayerHealth;
+				}
 			}
 		}
 	}
@@ -129,5 +137,5 @@ public class PlayerController : MonoBehaviour {
 		SceneManager.LoadScene ("Lose Screen");
 		Destroy (gameObject);
 	}
-
+		
 }

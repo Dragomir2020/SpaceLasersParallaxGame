@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour {
 	private float TotalHealth;
 	private ScoreKeeper ScoreKeeperGO;
 	private GameObject redLaser;
+	private GameObject explosion;
 
 	/// <summary>
 	///  Called when Enemy is spawned
@@ -79,8 +80,15 @@ public class EnemyController : MonoBehaviour {
 		//IncreaseScore
 		ScoreKeeperGO.AddToScore((int)TotalHealth);
 		AudioSource.PlayClipAtPoint (deathSound, transform.position);
+		GetExplosionGO ();
+		GameObject ex = Instantiate (explosion, this.transform.position, Quaternion.identity) as GameObject;
+		ex.SetActive (true); //Invokes explosion on awake with self destruct
 		//Destroy enemy game object
-		Destroy (gameObject);
+		Destroy(gameObject);
+	}
+
+	private void GetExplosionGO(){
+		explosion = this.transform.parent.parent.GetChild (0).GetChild (6).GetChild (0).gameObject;
 	}
 
 }
